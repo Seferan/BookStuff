@@ -43,6 +43,7 @@ public class CowShooter extends JavaPlugin implements Listener {
       final Player player = event.getPlayer();
       if (player.getItemInHand().getType() == Material.LEATHER) {
         Location loc = player.getLocation();
+        
         Vector vec = loc.getDirection();
         int mult = 3;
         vec.setX(vec.getX() * mult);
