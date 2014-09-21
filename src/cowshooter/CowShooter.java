@@ -44,18 +44,25 @@ public class CowShooter extends JavaPlugin implements Listener {
       if (player.getItemInHand().getType() == Material.LEATHER) {
         Location loc = player.getLocation();
         
-        Vector vec = loc.getDirection();
-        int mult = 3;
-        vec.setX(vec.getX() * mult);
-        vec.setY(vec.getY() * mult);
-        vec.setZ(vec.getZ() * mult);
+        Vector vec = calculateVector(loc); 
  
         final Creeper creeper = player.getWorld().spawn(loc, Creeper.class);//(3)
         creeper.setVelocity(vec);
         creeper.setFireTicks(20);
         BukkitRunnable runnable = new CowTask(player.getWorld(), creeper);
+
         runnable.runTaskTimer(this, 0L, 0L);
       }
     }
   }
+  
+  public static Vector calculateVector(Location loc) {
+         
+        Vector vec = loc.getDirection();
+        int mult = 3;
+        vec.setX(vec.getX() * mult);
+        vec.setY(vec.getY() * mult);
+        vec.setZ(vec.getZ() * mult);
+        return vec;
+        }
 }
