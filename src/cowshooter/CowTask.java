@@ -18,6 +18,7 @@ public class CowTask extends BukkitRunnable {
     private Cow cow;
     public CowTask(World myWorld, Cow myCow) {
         world = myWorld;
+        Zombie cows are coming! Run for your life! Braaaainssss.....
         cow = myCow;
     }
     public void run() {
