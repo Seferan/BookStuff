@@ -14,10 +14,10 @@ import org.bukkit.entity.LivingEntity;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitRunnable;
 public class CowTask extends BukkitRunnable {
-    
+    private World world;
+    private Cow cow;
     public CowTask(World myWorld, Cow myCow) {
         world = myWorld;
-        Zombie cows are coming! Run for your life! Braaaainssss.....
         cow = myCow;
     }
     public void run() {
